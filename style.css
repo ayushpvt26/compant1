@@ -909,7 +909,7 @@ text-align: left;
 }
 
 
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 768px) {
   nav {
     padding: 5px; 
     display: none;/* Adjust padding for smaller screens */
