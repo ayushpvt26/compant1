@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <img src="images/Asset.jpg">
+        <ul>
+        
+        <li><a href="#">APPLICATIONS</a></li>
+        <li><a href="#">JOB POSTINGS</a></li>
+        <li><a></a></li>
+        <li><a><a href="#" class="myButton">LOGOUT</a></a></li><br><br><br>
+          </ul>
+          </nav>
+          </header> 
+    
+          <div class="contact-1">
+            <div class="contact-form"><br><br><br><br><br>
+                <h2>POST AN JOB </h2>
+                <form onsubmit="sendEmail(); reset(); return false;" method="post">
+                  <label for="name">POSITION:</label>
+                  <input type="text" id="name" name="name" required>
+            
+                  <label for="email">EXPERIENCE REQUIRED:</label>
+                  <input type="email" id="email" name="email" required>
+            
+                  <label for="message">DISCRIPTION:</label>
+                  <textarea id="message" name="message" rows="6" required></textarea>
+            
+                  <button type="submit">Submit</button>
+                </form>
+              </div>
+        
+        
+        </div>
+</body>
+</html>

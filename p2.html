@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 2</title>
+</head>
+<body>
+    <h1>Page 2</h1>
+
+    <div id="div1">
+        <h2 contenteditable="true" id="heading1">Heading 1</h2>
+        <button onclick="deleteDiv('div1')">Delete</button>
+    </div>
+
+    <div id="div2">
+        <h2 contenteditable="true" id="heading2">Heading 2</h2>
+        <button onclick="deleteDiv('div2')">Delete</button>
+    </div>
+
+    <button onclick="createDiv()">Create New Div</button>
+
+    <script>
+        function deleteDiv(divId) {
+            var divElement = document.getElementById(divId);
+            divElement.parentNode.removeChild(divElement);
+        }
+
+        function createDiv() {
+            var newDiv = document.createElement('div');
+            newDiv.id = 'div' + (document.querySelectorAll('div').length + 1);
+
+            var newHeading = document.createElement('h2');
+            newHeading.contentEditable = true;
+            newHeading.id = 'heading' + (document.querySelectorAll('h2').length + 1);
+            newHeading.appendChild(document.createTextNode('New Heading'));
+
+            var deleteButton = document.createElement('button');
+            deleteButton.appendChild(document.createTextNode('Delete'));
+            deleteButton.onclick = function() {
+                deleteDiv(newDiv.id);
+            };
+
+            newDiv.appendChild(newHeading);
+            newDiv.appendChild(deleteButton);
+
+            document.body.appendChild(newDiv);
+        }
+
+        // Save edited heading to localStorage
+        document.addEventListener('input', function(event) {
+            if(event.target.tagName === 'H2') {
+                localStorage.setItem(event.target.id, event.target.innerText);
+            }
+        });
+    </script>
+</body>
+</html>

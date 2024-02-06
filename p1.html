@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add and Delete Headings</title>
+    <style>
+        #headingContainer {
+            margin-top: 20px;
+        }
+
+        .heading {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .deleteButton {
+            cursor: pointer;
+            color: red;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+   
+    <div id="headingContainer"></div>
+    <div id="specialdiv" style="display: none; border: 2px solid red;">
+        <label for="headingInput">Heading:</label>
+        <input type="text" id="headingInput" required><br>
+        <label for="headingInput">experience:</label>
+        <input type="text" id="exp" required><br>
+        <label for="headingInput">discription:</label>
+        <input type="text" id="dis" required><br>
+        <button type="button" onclick="addHeading()">Add</button>
+        <button type="button" onclick="deleteHeading()">Delete</button>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.has("ayush")) {
+                document.getElementById("specialdiv").style.display = "block";
+            }
+        });
+        // Load stored headings from local storage
+        window.onload = function () {
+            var storedHeadings = JSON.parse(localStorage.getItem("headings")) || [];
+            renderHeadings(storedHeadings);
+        }
+
+        function addHeading() {
+            var headingText = document.getElementById("headingInput").value;
+            var storedHeadings = JSON.parse(localStorage.getItem("headings")) || [];
+           
+            // Add new heading to the stored headings
+            storedHeadings.push(headingText);
+            localStorage.setItem("headings", JSON.stringify(storedHeadings));
+           
+            // Render headings on the page
+            renderHeadings(storedHeadings);
+
+            document.getElementById("headingInput").value = "";
+        }
+
+        function deleteHeading() {
+            var storedHeadings = JSON.parse(localStorage.getItem("headings")) || [];
+            if (storedHeadings.length > 0) {
+                // Remove the first heading instead of the last one
+                storedHeadings.shift();
+                localStorage.setItem("headings", JSON.stringify(storedHeadings));
+
+                // Render headings on the page
+                renderHeadings(storedHeadings);
+            }
+        }
+
+        function renderHeadings(headings) {
+            var headingContainer = document.getElementById("headingContainer");
+            headingContainer.innerHTML = "";
+
+            headings.forEach(function (headingText) {
+                var newHeading = document.createElement("div");
+                newHeading.className = "heading";
+                newHeading.textContent = headingText;
+                headingContainer.appendChild(newHeading);
+            });
+        }
+    </script>
+</body>
+
+</html>
