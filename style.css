@@ -910,23 +910,20 @@ text-align: left;
 
 
 @media only screen and (max-width: 768px) {
-  nav {
-    padding: 5px; 
-    display: none;/* Adjust padding for smaller screens */
+   .job-card {
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin: 0px 0px;
+    justify-content: center;
+    overflow: hidden;
+    max-width: auto;
+    width: 100%;
+    gap: 20px;
+    transition: transform 0.3s ease-in-out;
   }
-
-  li {
-    margin: 0 5px; /* Further reduced margin for smaller screens */
-  }
-
-  ul a {
-    font-size: 12px; /* Further reduced font size for smaller screens */
-  }
-
-  .contact-button {
-    padding: 3px 8px; /* Further reduced padding for smaller screens */
-    border-radius: 15px; /* Further reduced border radius for smaller screens */
-  }
+  
+ 
  
  body{
 margin: 0;
@@ -963,7 +960,7 @@ border: 2px solid red;
 padding: auto;
 }
 .conimg img{
-  width: 350px;
+  width: 340px;
  height: auto;
 }
 .discription{
@@ -1040,21 +1037,195 @@ display: none;
 
 .vmabout{
 text-align: center;
+height: auto;
   display: block;
 }
 .vmabout div{
 text-align: center;
 width: auto;
 }
-.vmabout div img{
+.vmabout  img{
 text-align: center;
-  width: auto;
+  width: 400px;
   }
 
 
 
+  .introabout {
+    border: 0px solid black;
+    height: auto;
+    display: block;
+  
+    justify-content: center;
+    margin: 10px 10px;
+    padding: 10px 10px;
+  
+  }
+  
+  .content-about {
+    border: 0px solid red;
+    border-radius: 20px;
+    background-color: #74ccec18;
+    height: auto;
+    object-fit: cover;
+    width: auto;
+    margin: 10px 10px;
+    padding: 10px 10px;
+    animation: moveright 1s linear 1;
+    animation-delay: 0s;
+    text-align: justify;
+    visibility: hidden;
+    animation-fill-mode: forwards;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .content-about3 {
+    border: 0px solid red;
+    border-radius: 10px;
+    background-color: #74ccec18;
+  
+    object-fit: cover;
+    width: 1000px;
+    margin: 30px 30px;
+    padding: 20px 40px;
+  
+    text-align: center;
+    box-sizing: border-box;
+  }
+  
+  .content-about2 {
+    border: 0px solid red;
+  
+    object-fit: cover;
+    width: 480px;
+    margin: 10px 10px;
+    padding: 10px 10px;
+    text-align: justify;
+    animation: moveleft 2s linear 1;
+    animation-delay: 2s;
+  
+    visibility: hidden;
+    animation-fill-mode: forwards;
+  
+    box-sizing: border-box;
+  }
+  
+  .image-about {
+    margin: 10px 10px;
+    padding: 10px 10px;
+    border: 1px solid red;
+    width: auto;
+    animation: float 5s infinite linear;
+    justify-items: center;
+    text-align: center;
+  }
+  
+  .image-about img {
+    height: 260px;
+    justify-items: center;
+    text-align: center;
+   
+    border: 0px solid red;
+  
+    animation: zoomin 0.6s linear 1;
+    animation-delay: 1s;
+  
+    visibility: hidden;
+    animation-fill-mode: forwards;
+  }
+  .carousel-container {
+    position: relative;
+    width: auto;
+   
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    /* Set the height as needed */
+    overflow: hidden;
+  }
+  
+  .carousel {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.8s ease;
+    justify-content: center;
+  }
+  
+  .image-container {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  
 
+  .content-about3 {
+    border: 0px solid red;
+    border-radius: 10px;
+    background-color: #74ccec18;
+  
+    
+    width: auto;
+    margin: 30px 30px;
+    padding: 20px 40px;
+  
+  
+  }
+  .content-about2 {
+    border: 0px solid red;
+  
+    
+    width: auto;
+    margin: 10px 10px;
+    padding: 10px 10px;
+    
+  }
+  .vmabout div img{
+    width: 300px;
+    margin: 30px 20px;
+    height: auto;
+  }
+  .vmabout div{
+    font-size: 12px;
+  }
+  .squares-section h1{
+    font-size: 25px;margin: 20px;
+  }
+  .vmcarrer h1{
+    font-size: 25px;
+    margin: 20px;
+  }
+  .square{
+    margin: 5px 40px;
+    padding: 10px 30px;
+   height: auto;
+   font-size: 15px;
 
+  }
+ 
+  .contact-image img{
+    height: auto;
+    width: 300px;
+  }
+  .contact-1{
+    background-color: white;
+    display: block;
+    font-size: 12px;
+    text-align: center;
+    justify-content: center;
+    justify-items: center;
+    margin:20px 0px;
+  }.contact-phone {
+    display: none;
+    height: auto;
+    width: 10px;
+  }
+  .contact-1 div img{
+    height: auto;
+    width: 300px;
+  }
+  
 
 
 }
