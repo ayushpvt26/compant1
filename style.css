@@ -986,6 +986,27 @@ font-size: 15px;
   display: none;
   cursor: pointer;
 }
+
+.con-button {
+  background-color: #3498db;
+  /* Highlighted button */
+  color: #ecf0f1;
+  /* Light text */
+  margin-right: 100px;
+  padding: 5px 15px;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.con-button:hover {
+  background-color: #5dade2;
+  /* Darker blue on hover */
+  color: white;
+}
 @media only screen and (max-width: 768px) {
  
 nav ul,.contact-button{
